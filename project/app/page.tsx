@@ -19,15 +19,15 @@ export default function Home() {
     <div className="relative flex min-h-screen flex-col">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
       
-      <section className="container flex min-h-screen max-w-6xl flex-col items-center justify-center px-4 py-24 md:py-32">
-        <div className="flex flex-col items-center gap-4 text-center">
+      <section className="container w-screen text-center flex min-h-screen max-w-6xl flex-col items-center justify-center px-4 py-24 md:py-32">
+        <div className="w-screen flex flex-col justify-center items-center gap-4 text-center">
           <motion.h1
-            className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-4xl text-center font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-center bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
               Giullya Gomes
             </span>
           </motion.h1>
@@ -65,7 +65,7 @@ export default function Home() {
               </Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="giullyagomes@gmail.com">Fale Comigo</Link>
+              <a href="mailto:giullyagomes@gmail.com">Fale Comigo</a>
             </Button>
           </motion.div>
         </div>

@@ -39,13 +39,13 @@ export function Footer() {
               <Twitter className="h-5 w-5" />
               <span className="sr-only">Twitter</span>
             </Link>
-            <Link
-              href="gomes.giullyav@gmail.com"
+            <a
+              href="mailto:gomes.giullyav@gmail.com"
               className="text-muted-foreground hover:text-foreground"
             >
               <Mail className="h-5 w-5" />
               <span className="sr-only">E-mail</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

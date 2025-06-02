@@ -111,8 +111,9 @@ export default function ProjectsPage() {
     async function fetchGithubRepos() {
       setIsLoading(true);
       try {
-        const response = await axios.get('https://api.github.com/users/github/repos?per_page=5&sort=updated');
+        const response = await axios.get('https://api.github.com/users/giullyagomes/repos');
         setGithubRepos(response.data);
+        console.log("resposta api, ", response.data)
         setError("");
       } catch (err) {
         console.error("Error fetching GitHub repos:", err);
@@ -142,65 +143,36 @@ export default function ProjectsPage() {
         </div>
 
         <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
-          <div className="flex justify-center">
-            <TabsList>
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="frontend">Frontend</TabsTrigger>
-              <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
-              <TabsTrigger value="design">UI/UX Design</TabsTrigger>
-            </TabsList>
-          </div>
-          
           <TabsContent value={activeTab} className="mt-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredProjects.map((project) => (
+              {githubRepos.map((project) => (
                 <Card key={project.id} className="overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
-                  <div className="aspect-video relative w-full overflow-hidden">
+                  <div className="flex items-center justify-center aspect-video relative w-full overflow-hidden">
                     <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
+                      src="/github-icon.svg"
+                      alt={project.name}
+                      width={200}
+                      height={200}
                       className="object-cover transition-transform hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   <CardHeader className="p-4">
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle>{project.name}</CardTitle>
                     <CardDescription className="line-clamp-2">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-4 pt-0">
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.technologies.slice(0, 4).map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <Badge variant="outline" className="text-xs">
-                          +{project.technologies.length - 4} more
-                        </Badge>
-                      )}
-                    </div>
+                    
                   </CardContent>
                   <CardFooter className="flex justify-between p-4 pt-0">
-                    {project.github && (
-                      <Button variant="outline\" size="sm\" asChild>
-                        <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Button asChild>
+                        <Link href={project.html_url} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
                           Code
                         </Link>
                       </Button>
-                    )}
-                    {project.live && (
-                      <Button size="sm" asChild>
-                        <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Demo
-                        </Link>
-                      </Button>
-                    )}
                   </CardFooter>
                 </Card>
               ))}

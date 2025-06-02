@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const response = await fetch('https://api.github.com/users/github/repos?per_page=5&sort=updated');
+    const response = await fetch('https://api.github.com/users/giullyagomes/repos');
     const data = await response.json();
     
     return NextResponse.json(data);
