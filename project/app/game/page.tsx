@@ -76,23 +76,23 @@ export default function GamePage() {
   
   const validateGuess = (guess: string): boolean => {
     if (guess.length !== 4) {
-      setError("Please enter a 4-digit number");
+      setError("Por favor, insira um número de 4 dígitos");
       return false;
     }
     
     if (!/^\d+$/.test(guess)) {
-      setError("Please enter only digits");
+      setError("Por favor, insira apenas dígitos");
       return false;
     }
     
     if (guess[0] === "0") {
-      setError("Number cannot start with 0");
+      setError("O número não pode começar com 0");
       return false;
     }
     
     const uniqueDigits = new Set(guess.split(""));
     if (uniqueDigits.size !== 4) {
-      setError("All digits must be different");
+      setError("Todos os dígitos devem ser diferentes");
       return false;
     }
     
@@ -163,7 +163,7 @@ export default function GamePage() {
                   value={currentGuess}
                   onChange={(e) => setCurrentGuess(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Enter 4-digit number"
+                  placeholder="Insira um número de 4 dígitos"
                   disabled={gameWon}
                   className="text-lg"
                 />
@@ -188,9 +188,9 @@ export default function GamePage() {
                 >
                   <Trophy className="mx-auto mb-2 h-8 w-8 text-primary" />
                   <p className="text-lg font-bold">Parabéns!</p>
-                  <p>You found the secret number: {secretNumber}</p>
+                  <p>Você encontrou o número secreto: {secretNumber}</p>
                   <p className="text-sm text-muted-foreground">
-                    It took you {guesses.length} {guesses.length === 1 ? "guess" : "guesses"}
+                    Você demorou {guesses.length} {guesses.length === 1 ? "guess" : "guesses"}
                   </p>
                 </motion.div>
               )}
@@ -221,8 +221,8 @@ export default function GamePage() {
           <CardFooter>
             <p className="text-sm text-muted-foreground">
               {guesses.length === 0 
-                ? "No guesses yet. Start playing!"
-                : `Total guesses: ${guesses.length}`}
+                ? "Nenhum palpite ainda. Comece a jogar!"
+                : `Total de palpites: ${guesses.length}`}
             </p>
           </CardFooter>
         </Card>

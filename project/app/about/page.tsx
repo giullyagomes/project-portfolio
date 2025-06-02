@@ -92,7 +92,7 @@ export default function AboutPage() {
         ))}
 
         <div className="mt-12 rounded-lg bg-card p-6 shadow-md">
-          <h2 className="mb-4 text-xl font-semibold">Why These Choices?</h2>
+          <h2 className="mb-4 text-xl font-semibold">Por que essas escolhas?</h2>
           <p className="mb-4 text-muted-foreground">
             Esta pilha foi cuidadosamente selecionada para proporcionar um equilíbrio entre desempenho, experiência 
             do desenvolvedor e experiência do usuário. O Next.js fornece uma estrutura robusta para aplicativos React

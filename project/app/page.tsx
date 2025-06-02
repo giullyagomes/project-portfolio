@@ -60,7 +60,7 @@ export default function Home() {
           >
             <Button asChild className="gap-2">
               <Link href="/projects">
-                Veja Meu Trabalho
+                Veja O Meu Trabalho
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>

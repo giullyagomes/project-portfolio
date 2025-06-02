@@ -135,10 +135,10 @@ export default function ProjectsPage() {
       <div className="space-y-8">
         <div>
           <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Projects
+            Projetos
           </h1>
           <p className="text-muted-foreground">
-            A collection of my recent work and personal projects.
+            Uma coletânea do meu trabalho recente e projetos pessoais.
           </p>
         </div>
 

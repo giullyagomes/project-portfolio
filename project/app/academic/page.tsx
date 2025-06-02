@@ -12,7 +12,7 @@ const academicExperience = [
     description: "O curso de Sistemas para Internet é focado no desenvolvimento e gestão de sistemas online. Os alunos aprendem a planejar, desenvolver, implantar e gerenciar sistemas, com uma grade curricular que abrange diversas áreas da tecnologia.",
     achievements: [
       "Pibic 2025",
-      "Pibic 2026'",
+      "Pibic 2026",
       "Monitoria em Banco de Dados"
     ],
     icon: <GraduationCap className="h-5 w-5" />
